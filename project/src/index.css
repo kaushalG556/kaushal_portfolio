@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-cyber-bg text-slate-200 font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(0, 240, 255, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #03000f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00f0ff, #ff2bd6);
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .neon-text {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.3);
+  }
+  .neon-text-magenta {
+    text-shadow: 0 0 10px rgba(255, 43, 214, 0.6), 0 0 30px rgba(255, 43, 214, 0.3);
+  }
+  .glass {
+    background: rgba(10, 4, 32, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 240, 255, 0.12);
+  }
+  .glass-card {
+    background: linear-gradient(135deg, rgba(15, 8, 40, 0.6), rgba(8, 3, 25, 0.5));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #00f0ff, #ff2bd6, #b6ff00);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.5), rgba(255, 43, 214, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), inset 0 0 12px rgba(0, 240, 255, 0.08);
+  }
+  .glow-magenta {
+    box-shadow: 0 0 20px rgba(255, 43, 214, 0.35), inset 0 0 12px rgba(255, 43, 214, 0.08);
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
